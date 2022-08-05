@@ -16,7 +16,7 @@ public class Main {
 			//Creo sucursal
 			Location location = new Location();
 			location.setStreet_number("3039");
-			location.setStreet_name("Pepe la concha tuya");
+			location.setStreet_name("Juramento");
 			location.setCity_name("Belgrano");
 			location.setState_name("Capital Federal");
 			location.setLatitude(-32.8897322);
@@ -54,9 +54,13 @@ public class Main {
 			System.out.println("\n--------------------------------------\n");
 			
 			//Creo orden de pago
-			Order.createOrder(mercadoPago, boxResponse, 50, "MoraPanty", "1");
+			Order.createOrder(mercadoPago, boxResponse, 50, "MoraPanty", "8a1e80836bdba790016be6a23a74");
 			System.out.println("Orden de pago creada");
 			
+			//Busco orden de pago
+			Order order = Order.getOrder(mercadoPago, "8a1e80836bdba790016be6a23a74");
+			System.out.println("Orden: " + order.getId());
+
 			System.out.println("\n--------------------------------------\n");
 			
 			//Obtengo pago (para recibir el id del pago usar ngrok)
